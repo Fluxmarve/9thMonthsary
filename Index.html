@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 9th Monthsary, Lovieeee!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: url('https://i.postimg.cc/N0YMH38T/173788324687788311.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .content {
+            transition: filter 0.5s ease; /* Smooth transition for blur effect */
+            position: relative;
+            z-index: 10; /* Ensure content appears above roses */
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: slideIn 2s ease-in-out;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Falling Roses */
+        .falling-rose {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+            animation: fall 8s linear infinite;
+            pointer-events: none;
+            z-index: 1; /* Keep roses behind all text */
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0.5; }
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: popupFadeIn 0.5s ease-in-out;
+        }
+
+        .popup h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #ff69b4;
+        }
+
+        .close-btn, .yes-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Bouquet Styles */
+        #bouquet-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2000;
+            display: none;
+        }
+
+        .bouquet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .bouquet img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling Roses Background -->
+    <div id="falling-roses"></div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Happy 9th Monthsary Lovieeee!</h1>
+
+        <div class="message">
+            <p>Hey Cristina,</p>
+        <p>Happy 9th monthsary, lovie! Crazy how time flies, right? Even though we're miles apart, it feels like you're always right here with me. Honestly, you're the best thing that's happened to me. You're so beautiful, inside and out, and I swear, your personality is just...wow. You make me smile like no one else can.</p>
+        <p>Being so far away is tough, I'm not gonna lie. I miss your touch, your voice, just being near you. It's a constant ache, you know? I pray for you every single day, Cristina. I pray that somehow, we can make this work, that one day, we can be together forever, in a way that's right for us. You know I mean, the halal way. I want to marry you.</p>
+        <p>I know times have been difficult, but that doesn't affect how deeply I feel for you. I can't wait to turn all our future talks into reality. You're everything to me, and I love you more than words can say.</p>
+        <p>Yours always,</p>
+        <p>Hamid :3</p>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <h2>Are you sure you're the wife of Hamid? 🥰</h2>
+                <p>No one else is allowed on this love letter 🤨</p>
+                 <p>(Sorry, didn't have much time, so didn't write much. I love you! Mwa mwa 😘)</p>
+                <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+        <div class="message" id="readingNote" style="display: none;">
+            <p>Have you done reading?</p>
+            <button class="yes-btn" onclick="showBouquet()">Yes</button>
+        </div>
+    </div>
+
+    <div id="bouquet-container">
+        <div class="bouquet" id="bouquet">
+            <img src="https://i.postimg.cc/TwJnbjW2/1000018284-removebg.png" alt="Bouquet of Flowers">
+            <p>Here you go, my love! 🌸💐</p>
+        </div>
+    </div>
+
+    <script>
+        // Show the popup on page load
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'flex';
+            startFallingRoses();
+        };
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('readingNote').style.display = 'block';
+        }
+
+        // Show the bouquet
+        function showBouquet() {
+            document.getElementById('bouquet-container').style.display = 'block';
+            document.querySelector('.content').style.filter = 'blur(5px)';
+        }
+
+        // Create falling roses
+        function startFallingRoses() {
+            const roseContainer = document.getElementById('falling-roses');
+            for (let i = 0; i < 10; i++) { // Reduced number of roses
+                const rose = document.createElement('img');
+                rose.src = 'https://cdn.shopify.com/s/files/1/1012/0108/files/LightPink_6e105d9d-70fe-486b-8c09-836e1e664542.png?v=1684836889'; // Rose image
+                rose.className = 'falling-rose';
+                rose.style.left = Math.random() * 100 + 'vw';
+                rose.style.animationDuration = Math.random() * 2 + 6 + 's';
+                roseContainer.appendChild(rose);
+
+                rose.addEventListener('animationend', () => {
+                    rose.remove(); // Remove roses after animation
+                });
+            }
+        }
+    </script>
+</body>
+</html>
